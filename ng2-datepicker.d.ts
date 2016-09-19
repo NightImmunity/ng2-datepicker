@@ -1,1 +1,1 @@
-export declare const DatePicker: any[];
+export declare const DatePickerModule: any[];
