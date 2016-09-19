@@ -8,8 +8,8 @@ import {BrowserModule} from '@angular/platform-browser';
   imports: [CommonModule, FormsModule, BrowserModule],
   declarations: [DatePickerComponent],
   exports: [DatePickerComponent],
-  id: 'DPCM'
-  // bootstrap: [DatePickerComponent]
+  id: 'DPCM',
+  bootstrap: [DatePickerComponent]
 })
 
 export class DatePickerComponentModule {}
