@@ -27,6 +27,14 @@ import {DatePickerModule} from 'ng2-datepicker/ng2-datepicker';
 export class MyModule { }
 ```
 
+### Usage in forms
+
+Add the below code as an import to your module.
+
+```ts
+import {FormsModule} from '@angular/forms';
+```
+
 ## Example:
 
 ```html
