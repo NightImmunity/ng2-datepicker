@@ -1,5 +1,5 @@
-import { DatePickerComponent } from './src/components/ng2-datepicker';
+import { DatePickerComponentModule } from './src/components/ng2-datepicker.module';
 
-export const DatePicker: any[] = [
-  DatePickerComponent
+export const DatePickerModule: any[] = [
+  DatePickerComponentModule
 ];

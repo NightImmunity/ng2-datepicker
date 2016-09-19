@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef, forwardRef, OnInit, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import {DatePickerComponentModule} from '../../ng2-datepicker.module';
+import {DatePickerComponentModule} from './ng2-datepicker.module';
 import * as moment_ from 'moment';
 
 const moment: any = (<any>moment_).default || moment_;
@@ -23,8 +23,8 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
 @Component({
   moduleId: 'DPCM',
   selector: 'datepicker',
-  templateUrl: 'ng2-datepicker.component.html',
-  styleUrls: ['ng2-datepicker.css'],
+  templateUrl: './ng2-datepicker.component.html',
+  styleUrls: ['./ng2-datepicker.css'],
   providers: [CALENDAR_VALUE_ACCESSOR]
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DatePickerComponent} from './src/components/ng2-datepicker';
+import {DatePickerComponent} from './ng2-datepicker';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 
