@@ -11,10 +11,23 @@ Angular2 Datepicker Component
 
 
 ````shell
-npm install ng2-datepicker --save
+npm install NightImmunity/ng2-datepicker --save
 ````
 
-## Example from demo:
+## Importing
+
+```ts
+import {DatePickerModule} from 'ng2-datepicker/ng2-datepicker';
+
+@NgModule({
+  imports: [..., DatePickerModule],
+  ...
+})
+
+export class MyModule { }
+```
+
+## Example:
 
 ```html
 <datepicker [(ngModel)]="data.date" [expanded]="true"></datepicker>
