@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'datepicker-demo',
-  templateUrl: './demo/datepicker-demo.component.html'
+  template: '<datepicker [expanded]="true"></datepicker>'
 })
 
 export class DatePickerDemo {}
