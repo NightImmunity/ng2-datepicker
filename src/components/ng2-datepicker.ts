@@ -25,11 +25,13 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
   selector: 'datepicker',
   template: `
     <div [class]="class">
-      <input type="hidden" [(ngModel)]="viewDate">
-      <div class="ui-kit-calendar-input" [class.opened]="opened || expanded" (click)="toggle()">
-        <span [class.opened]="opened || expanded">{{ viewDate }}</span>
-        <i class="ion-ios-calendar-outline"></i>
+      <div class="input-group">
+        <input class="form-control" type="text" [(ngModel)]="viewDate">
+        <div class="input-group-addon">
+          <button class="glyphicon glyphicon-calendar" (click)="toggle()"></button>
+        </div>
       </div>
+
       <div class="ui-kit-calendar-cal-container" [class.opened]="opened">
         <div class="ui-kit-calendar-cal-top">
           <i class="ion-arrow-left-b" (click)="prevMonth()"></i>
@@ -57,7 +59,10 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
     </div>
   `,
   styles: [
-    `.ui-kit-calendar-container {
+    `
+    button.glyphicon-calendar {
+    }
+    .ui-kit-calendar-container {
         position: relative;
         width: 170px;
         margin: 0 10px 0 0;
