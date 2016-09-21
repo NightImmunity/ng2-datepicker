@@ -28,7 +28,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
       <div class="input-group">
         <input class="form-control" type="text" [(ngModel)]="viewDate">
         <div class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar" (click)="toggle()"></span>
+          <span class="glyphicon glyphicon-calendar" [class.opened]="opened || expanded" (click)="toggle()"></span>
         </div>
       </div>
 
@@ -260,7 +260,21 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
           .ui-kit-calendar-container.success .ui-kit-calendar-cal-container .ui-kit-calendar-day-names {
             background: #257960; }
           .ui-kit-calendar-container.success .ui-kit-calendar-cal-container .ui-kit-calendar-days span:hover, .ui-kit-calendar-container.success .ui-kit-calendar-cal-container .ui-kit-calendar-days span.is-active {
-            color: #3fc59d; }`
+            color: #3fc59d; }        
+        .ui-kit-calendar-container.default .ui-kit-calendar-input.opened {
+          color: DimGrey;
+          background: rgba(231, 231, 231, 0.15);
+          border: 1px solid #3fc59d; }
+          .ui-kit-calendar-container.default .ui-kit-calendar-input.opened i {
+            color: DimGrey; }
+        .ui-kit-calendar-container.default .ui-kit-calendar-cal-container {
+          background: DimGrey; }
+          .ui-kit-calendar-container.default .ui-kit-calendar-cal-container:after {
+            border-left: 15px solid DimGrey; }
+          .ui-kit-calendar-container.default .ui-kit-calendar-cal-container .ui-kit-calendar-day-names {
+            background: Orange; }
+          .ui-kit-calendar-container.default .ui-kit-calendar-cal-container .ui-kit-calendar-days span:hover, .ui-kit-calendar-container.success .ui-kit-calendar-cal-container .ui-kit-calendar-days span.is-active {
+            color: DimGrey;`
   ],
   providers: [CALENDAR_VALUE_ACCESSOR]
 })
