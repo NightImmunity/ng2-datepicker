@@ -28,7 +28,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
       <div class="input-group">
         <input class="form-control" type="text" [(ngModel)]="viewDate">
         <div class="input-group-addon">
-          <button class="glyphicon glyphicon-calendar" (click)="toggle()"></button>
+          <span class="glyphicon glyphicon-calendar" (click)="toggle()"></span>
         </div>
       </div>
 
@@ -60,7 +60,18 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
   `,
   styles: [
     `
-    button.glyphicon-calendar {
+    .ui-kit-calendar-container div.input-group {
+      min-width: 190px;
+      max-width: 275px;
+      position: relative;
+      z-index: 99;
+    }
+    span.glyphicon-calendar {
+      cursor: pointer;
+      padding: 6px 12px;
+    }
+    .input-group-addon {
+      padding: 0px;
     }
     .ui-kit-calendar-container {
         position: relative;
@@ -69,12 +80,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
         display: block;
         float: left;
         z-index: 99;
-        position: relative;
-        width: 170px;
-        margin: 0 10px 0 0;
-        display: block;
-        float: left;
-        z-index: 99; }
+    }
         .ui-kit-calendar-container .ui-kit-calendar-input {
           border: 1px solid #aec9de;
           border-radius: 10px;
@@ -115,10 +121,13 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
           border-radius: 3px;
           visibility: hidden;
           opacity: 0;
+          z-index: 100;
           transition: visibility 0s, opacity 300ms linear 300ms; }
           .ui-kit-calendar-container .ui-kit-calendar-cal-container.opened {
             visibility: visible;
-            opacity: 1; }
+            opacity: 1;
+            z-index: 100;
+            position: absolute; }
           .ui-kit-calendar-container .ui-kit-calendar-cal-container:after {
             position: absolute;
             top: -15px;
@@ -129,7 +138,8 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;
             border-left: 15px solid #44c8f9;
-            transform: rotate(-90deg); }
+            transform: rotate(-90deg);
+            z-index: 100; }
           .ui-kit-calendar-container .ui-kit-calendar-cal-container .ui-kit-calendar-cal-top {
             width: 100%;
             height: 40px;
