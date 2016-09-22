@@ -314,7 +314,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.class = `ui-kit-calendar-container ${this.class}`;
     this.opened = this.opened || false;
     this.format = this.format || 'YYYY-MM-DD';
-    this.viewFormat = this.viewFormat || 'D MMMM YYYY';
+    
+    this.viewFormat = this.viewFormat || 'YYYY/MM/DD';
     this.firstWeekdaySunday = this.firstWeekdaySunday || false; 
     setTimeout(() => {
       if (!this.viewDate) {
