@@ -286,11 +286,11 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() viewFormat: string;
   @Input() firstWeekdaySunday: boolean;
 
+  public viewDate: string = null;
   private date: any = moment();
   private onChange: Function;
   private onTouched: Function;
-  private el: Element;
-  private viewDate: string = null;
+  private el: Element;  
   private days: CalendarDate[] = [];
 
   private onTouchedCallback: () => void = () => { };
