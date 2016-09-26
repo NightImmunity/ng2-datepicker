@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef, forwardRef, OnInit, Input } from '@angular/core';
+import { Component, ViewContainerRef, forwardRef, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import {DatePickerComponentModule} from './ng2-datepicker.module';
 import * as moment_ from 'moment';
@@ -285,8 +285,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() format: string;
   @Input() viewFormat: string;
   @Input() firstWeekdaySunday: boolean;
+  @Output() selectedDate: EventEmitter<any> = new EventEmitter<any>();
 
-  public viewDate: string = null;
+  private viewDate: string = null;
   private date: any = moment();
   private onChange: Function;
   private onTouched: Function;
@@ -379,9 +380,10 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     e.preventDefault();
 
     let date: CalendarDate = this.days[i];
-    let selectedDate = moment(`${date.day}.${date.month}.${date.year}`, 'DD.MM.YYYY');
-    this.value = selectedDate.format(this.format);
-    this.viewDate = selectedDate.format(this.viewFormat);
+    let theSelectedDate = moment(`${date.day}.${date.month}.${date.year}`, 'DD.MM.YYYY');
+    this.selectedDate.emit(theSelectedDate);
+    this.value = theSelectedDate.format(this.format);
+    this.viewDate = theSelectedDate.format(this.viewFormat);
     this.close();
     this.generateCalendar();
   }
